@@ -1,0 +1,51 @@
+# 张三
+
+zhangsan@email.com | 138-0000-0000 | 北京市朝阳区 | github.com/zhangsan
+
+## 教育背景
+
+### <div class="edu-row"><strong>北京大学 - 计算机科学与技术 硕士</strong> <span>2020.09 - 2023.06</span></div>
+
+- GPA: 3.8/4.0
+- 主修课程：机器学习、分布式系统、高级算法
+
+### <div class="edu-row"><strong>清华大学 - 软件工程 学士</strong> <span>2016.09 - 2020.06</span></div>
+
+- GPA: 3.7/4.0
+- 获得校级优秀毕业论文奖
+
+## 工作经历
+
+### <div class="edu-row"><strong>高级后端工程师 - 字节跳动</strong> <span>2023.07 - 至今</span></div>
+
+- 负责核心推荐系统的后端架构设计与优化，支撑日均 10 亿次请求
+- 主导微服务架构迁移项目，将单体应用拆分为 15 个独立服务，部署效率提升 60%
+- 设计并实现高可用缓存方案，系统响应时间降低 40%，服务可用性达 99.99%
+- 带领 5 人团队完成数据管道重构，数据处理延迟从 5 分钟降至 30 秒
+
+### <div class="edu-row"><strong>后端工程师 - 阿里巴巴</strong> <span>2021.06 - 2023.06（实习 + 正式）</span></div>
+
+- 参与电商平台订单系统开发，处理日均百万级订单创建与状态流转
+- 开发分布式锁组件，解决高并发场景下的库存超卖问题
+- 编写单元测试与集成测试，代码覆盖率从 65% 提升至 90%
+
+## 项目经验
+
+### 智能文档处理平台
+
+- 基于 LLM 构建的企业级文档智能分析平台，支持 PDF、Word、Excel 等格式解析
+- 使用 Python + FastAPI 构建后端服务，Redis 做缓存，PostgreSQL 存储元数据
+- 集成 RAG 检索增强生成技术，文档问答准确率达 92%
+
+### 开源贡献 - Apache Kafka
+
+- 为 Apache Kafka 贡献了消费者组再平衡优化补丁，被合入主分支
+- 修复了分区分配策略中的边界条件 Bug，影响 2000+ 生产集群
+
+## 专业技能
+
+- **编程语言**：Python、Go、Java、Rust
+- **后端框架**：FastAPI、Gin、Spring Boot
+- **数据库**：MySQL、PostgreSQL、Redis、MongoDB、Elasticsearch
+- **基础设施**：Kubernetes、Docker、Kafka、gRPC、Nginx
+- **工具链**：Git、CI/CD、Prometheus、Grafana

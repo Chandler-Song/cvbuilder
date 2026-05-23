@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cvbuilder-cli"
+version = "0.1.2"
+description = "Generate PDF resumes from Markdown with customizable styles, headers/footers, and LLM auto-formatting"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Chandler", email = "275737875@qq.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Build Tools",
+]
+dependencies = [
+    "typer>=0.9,<1.0",
+    "markdown>=3.5,<4.0",
+    "playwright>=1.40,<2.0",
+    "pypdf>=3.0,<5.0",
+    "llmdog",
+    "larkfunc",
+    "rich>=13.0,<14.0",
+]
+
+
+[project.scripts]
+cvbuilder = "cvbuilder.cli:app"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cvbuilder = ["templates/*"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cvbuilder"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4", "SIM"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true

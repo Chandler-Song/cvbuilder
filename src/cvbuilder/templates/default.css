@@ -1,0 +1,172 @@
+/* cvbuilder - Default Style */
+/* 传统正式风格：衬线字体、横线分隔、保守配色 */
+
+@page {
+    size: A4;
+    margin: 12mm 15mm;
+}
+
+:root {
+    --text: #333333;
+    --muted: #555555;
+    --line: #999999;
+    --accent: #333333;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family:
+        "Georgia", "Noto Serif CJK SC", "Source Han Serif SC",
+        "SimSun", "Times New Roman", serif;
+}
+
+#write {
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+/* H1: Name - centered, traditional */
+#write h1 {
+    margin: 0 0 6px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    color: #111111;
+}
+
+/* Contact info */
+#write h1 + p {
+    margin: 6px 0 12px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 11.5px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* H2: Section headers - horizontal rule style */
+#write h2 {
+    margin: 14px 0 6px;
+    padding: 0 0 3px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111111;
+    border-bottom: 1px solid var(--line);
+    border-left: none;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    page-break-after: avoid;
+}
+
+/* H3: Job titles */
+#write h3 {
+    margin: 10px 0 2px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #222222;
+    page-break-after: avoid;
+}
+
+#write h3 + p {
+    margin: 0 0 4px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#write p {
+    margin: 3px 0;
+    text-align: justify;
+}
+
+#write strong {
+    color: #111111;
+}
+
+#write ul {
+    margin: 3px 0 8px 20px;
+    padding: 0;
+    list-style-type: disc;
+}
+
+#write li {
+    margin: 2px 0;
+    line-height: 1.45;
+}
+
+#write li::marker {
+    color: var(--accent);
+}
+
+#write code {
+    font-family: "Courier New", Courier, monospace;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+}
+
+/* Education row layout */
+#write .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin: 2px 0;
+}
+
+#write .edu-row strong {
+    font-weight: 700;
+}
+
+#write .edu-row span {
+    color: var(--muted);
+    text-align: right;
+    white-space: nowrap;
+    font-style: italic;
+}
+
+/* Avoid page breaks */
+#write h3 + p + p,
+#write h3 + p + p + ul,
+#write h2 + p,
+#write h2 + h3,
+#write h2 + h3 + p,
+#write h2 + h3 + p + p + ul {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+@media print {
+    html, body {
+        zoom: 1;
+    }
+    #write {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    #write h2 {
+        font-size: 16px;
+    }
+    #write h3 {
+        font-size: 14px;
+    }
+    #write p, #write ul, #write li {
+        orphans: 3;
+        widows: 3;
+    }
+}

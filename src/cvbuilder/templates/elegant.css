@@ -1,0 +1,188 @@
+/* cvbuilder - Elegant Style */
+/* 优雅现代风格：渐变强调色、卡片式区块、柔和阴影效果 */
+
+@page {
+    size: A4;
+    margin: 12mm 14mm;
+}
+
+:root {
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --accent: #6366f1;
+    --accent-light: #818cf8;
+    --bg-card: #f8fafc;
+    --border-light: #e2e8f0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family:
+        "Inter", "SF Pro Display", "PingFang SC", "Microsoft YaHei",
+        "Noto Sans CJK SC", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#write {
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text);
+    background: linear-gradient(to bottom, #ffffff 0%, #fafbfc 100%);
+}
+
+/* H1: Name - gradient text effect */
+#write h1 {
+    margin: 0 0 8px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.3px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Contact info */
+#write h1 + p {
+    margin: 0 0 14px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 450;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+}
+
+/* H2: Section headers - gradient accent bar */
+#write h2 {
+    margin: 16px 0 8px;
+    padding: 6px 0 6px 12px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    background: linear-gradient(to right, var(--bg-card) 0%, transparent 100%);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    page-break-after: avoid;
+}
+
+/* H3: Job titles / Project names */
+#write h3 {
+    margin: 12px 0 3px;
+    font-size: 14.5px;
+    font-weight: 650;
+    color: var(--text);
+    page-break-after: avoid;
+}
+
+#write h3 + p {
+    margin: 0 0 5px;
+    color: var(--muted);
+    font-size: 12.5px;
+    font-weight: 400;
+}
+
+#write p {
+    margin: 3px 0;
+}
+
+#write strong {
+    color: var(--text);
+    font-weight: 650;
+}
+
+#write ul {
+    margin: 3px 0 7px 18px;
+    padding: 0;
+}
+
+#write li {
+    margin: 2.5px 0;
+    line-height: 1.5;
+}
+
+#write li::marker {
+    color: var(--accent-light);
+}
+
+#write code {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    background: var(--bg-card);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid var(--border-light);
+}
+
+/* Education/Experience row layout */
+#write .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin: 2px 0;
+}
+
+#write .edu-row strong {
+    font-weight: 650;
+}
+
+#write .edu-row span {
+    color: var(--accent);
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 12.5px;
+}
+
+/* Skills tags styling */
+#write strong {
+    display: inline;
+}
+
+/* Avoid page breaks inside content blocks */
+#write h3 + p + p,
+#write h3 + p + p + ul,
+#write h3 + p + p + ul + p,
+#write h2 + p,
+#write h2 + p + p,
+#write h2 + h3,
+#write h2 + h3 + p,
+#write h2 + h3 + p + p,
+#write h2 + h3 + p + p + ul {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+@media print {
+    html, body {
+        zoom: 1;
+    }
+    #write {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 13px;
+        line-height: 1.52;
+    }
+    #write h2 {
+        font-size: 16px;
+    }
+    #write h3 {
+        font-size: 14.5px;
+    }
+    #write p, #write ul, #write li {
+        orphans: 3;
+        widows: 3;
+    }
+}

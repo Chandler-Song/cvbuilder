@@ -1,0 +1,142 @@
+/* cvbuilder - Modern Style */
+/* 现代简约风格：大留白、无边框、强调色 */
+
+@page {
+    size: A4;
+    margin: 15mm 18mm;
+}
+
+:root {
+    --text: #2d3748;
+    --muted: #718096;
+    --accent: #3182ce;
+    --bg-subtle: #f7fafc;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family:
+        "Inter", "SF Pro Display", "PingFang SC", "Microsoft YaHei",
+        "Noto Sans CJK SC", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#write {
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* H1: Name - larger, lighter weight */
+#write h1 {
+    margin: 0 0 4px;
+    text-align: left;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: #1a202c;
+}
+
+/* Contact info */
+#write h1 + p {
+    margin: 0 0 16px;
+    text-align: left;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* H2: Section headers - clean underline */
+#write h2 {
+    margin: 20px 0 8px;
+    padding: 0 0 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-left: none;
+    page-break-after: avoid;
+}
+
+/* H3: Job titles */
+#write h3 {
+    margin: 12px 0 2px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a202c;
+    page-break-after: avoid;
+}
+
+#write h3 + p {
+    margin: 0 0 4px;
+    color: var(--muted);
+    font-size: 12px;
+    font-style: italic;
+}
+
+#write p {
+    margin: 4px 0;
+}
+
+#write strong {
+    color: #1a202c;
+    font-weight: 600;
+}
+
+#write ul {
+    margin: 4px 0 8px 16px;
+    padding: 0;
+}
+
+#write li {
+    margin: 3px 0;
+    line-height: 1.5;
+}
+
+#write li::marker {
+    color: var(--accent);
+}
+
+#write code {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    background: var(--bg-subtle);
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Avoid page breaks */
+#write h3 + p + p,
+#write h3 + p + p + ul,
+#write h2 + p,
+#write h2 + h3,
+#write h2 + h3 + p {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+@media print {
+    html, body {
+        zoom: 1;
+    }
+    #write {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    #write p, #write ul, #write li {
+        orphans: 3;
+        widows: 3;
+    }
+}
